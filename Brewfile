@@ -58,7 +58,6 @@ brew 'libtool'
 brew 'xz'
 brew 'imagemagick', args: ['with-webp']
 brew 'isl'
-brew 'isl@0.14'
 brew 'jasper'
 brew 'john'
 brew 'knock'
