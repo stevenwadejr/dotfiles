@@ -1,6 +1,14 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/stevenwadejr/.oh-my-zsh
 
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{path,exports,aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -47,18 +55,6 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git cloudapp coffee composer docker git-flow laravel laravel5 vagrant)
 
-# User configuration
-
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin:$PATH"
-# export MANPATH="/usr/local/man:$MANPATH"
-export PATH="/Users/stevenwadejr/activator:$PATH"
-export PATH=$PATH:/usr/local/mysql/bin
-export PATH=/usr/local/php5/bin:$PATH
-export PATH="/usr/local/bin:$PATH"
-
-export GOPATH=$HOME/Developer/Go
-
-export PATH=$PATH:$GOPATH/bin
 
 source $ZSH/oh-my-zsh.sh
 
@@ -77,45 +73,3 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Help Scout Aliases and bash completion
-export SCOUT_DOCKER_MODE=1
-export HS_PROJECT_DIRECTORY=~/Developer/Repos/HelpScout
-
-alias scout="php ${HS_PROJECT_DIRECTORY}/scout-cli/bin/scout.php"
-eval $(php ${HS_PROJECT_DIRECTORY}/scout-cli/bin/scout.php _completion --generate-hook --program scout)
-
-export AWS_PROFILE='default'
-
-# END Help Scout
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="/usr/local/sbin:$PATH"
-
-export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
-eval $(/usr/libexec/path_helper -s)
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-if which docker-machine > /dev/null; then
-	# This will set up your shell to use the docker-machine if it is running,
-	# but will not start it automatically.
-	# When you want to start it, run: `docker-start` in your shell.
-	# If you want the docker-machine to start automatically, see below.
-	function hs-docker-discover()
-	{
-		eval $(docker-machine env default 2>/dev/null)
-	}
-	function hs-docker-start()
-	{
-		if ! docker-machine active >/dev/null 2>&1; then
-			docker-machine start default
-		fi
-	    eval $(docker-machine env default 2>/dev/null)
-	}
-	# To make docker-machine start automatically, replace the
-	# `hs-docker-discover` call below with `hs-docker-start`.
-	hs-docker-discover
-fi
