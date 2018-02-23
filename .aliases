@@ -162,4 +162,4 @@ alias serve="open -a Google\ Chrome http://localhost:8000 && php -S localhost:80
 # Help Scout
 alias hs="code && cd helpscout/hs-app"
 alias scout="php ${HS_PROJECT_DIRECTORY}/scout-cli/bin/scout.php"
-eval $(php ${HS_PROJECT_DIRECTORY}/scout-cli/bin/scout.php _completion --generate-hook --program scout)
+# eval $(php ${HS_PROJECT_DIRECTORY}/scout-cli/bin/scout.php _completion --generate-hook --program scout)
