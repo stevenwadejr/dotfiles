@@ -153,3 +153,9 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# git nope
+alias nope="git reset --hard; git clean -df;"
+
+# start php server locally and open chrome tab
+alias serve="open -a Google\ Chrome http://localhost:8000 && php -S localhost:8000 -t ."
