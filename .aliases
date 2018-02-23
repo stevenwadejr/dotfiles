@@ -14,7 +14,7 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias code="cd ~/Code"
 alias sandbox="code && cd _sandbox"
-alias homestead="cd ~/Homestead
+alias homestead="cd ~/Homestead"
 
 alias fixmymac="killall -KILL SystemUIServer && killall -KILL Finder && killall -KILL Dock && killall -KILL coreaudiod"
 
