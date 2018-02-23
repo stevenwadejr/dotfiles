@@ -197,3 +197,25 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# Help Scout
+if which docker-machine > /dev/null; then
+	# This will set up your shell to use the docker-machine if it is running,
+	# but will not start it automatically.
+	# When you want to start it, run: `docker-start` in your shell.
+	# If you want the docker-machine to start automatically, see below.
+	function hs-docker-discover()
+	{
+		eval $(docker-machine env default 2>/dev/null)
+	}
+	function hs-docker-start()
+	{
+		if ! docker-machine active >/dev/null 2>&1; then
+			docker-machine start default
+		fi
+	    eval $(docker-machine env default 2>/dev/null)
+	}
+	# To make docker-machine start automatically, replace the
+	# `hs-docker-discover` call below with `hs-docker-start`.
+	hs-docker-discover
+fi
