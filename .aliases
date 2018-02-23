@@ -15,7 +15,6 @@ alias dt="cd ~/Desktop"
 alias code="cd ~/Code"
 alias sandbox="code && cd _sandbox"
 alias homestead="cd ~/Homestead
-alias hs="code && cd helpscout/hs-app"
 
 alias fixmymac="killall -KILL SystemUIServer && killall -KILL Finder && killall -KILL Dock && killall -KILL coreaudiod"
 
@@ -159,3 +158,8 @@ alias nope="git reset --hard; git clean -df;"
 
 # start php server locally and open chrome tab
 alias serve="open -a Google\ Chrome http://localhost:8000 && php -S localhost:8000 -t ."
+
+# Help Scout
+alias hs="code && cd helpscout/hs-app"
+alias scout="php ${HS_PROJECT_DIRECTORY}/scout-cli/bin/scout.php"
+eval $(php ${HS_PROJECT_DIRECTORY}/scout-cli/bin/scout.php _completion --generate-hook --program scout)
