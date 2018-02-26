@@ -38,7 +38,7 @@ export GPG_TTY=$(tty);
 
 # Help Scout Aliases and bash completion
 export SCOUT_DOCKER_MODE=1
-export HS_PROJECT_DIRECTORY=~/Developer/Repos/HelpScout
+export HS_PROJECT_DIRECTORY=~/Code/helpscout
 export AWS_PROFILE='default'
 # END Help Scout
 
