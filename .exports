@@ -39,7 +39,7 @@ export GPG_TTY=$(tty);
 # Help Scout Aliases and bash completion
 export SCOUT_DOCKER_MODE=1
 export HS_PROJECT_DIRECTORY=~/Code/helpscout
-export AWS_PROFILE='default'
+export AWS_PROFILE='hs-docker-user'
 # END Help Scout
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
