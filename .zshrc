@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git cloudapp coffee composer docker git-flow laravel laravel5 vagrant)
+plugins=(git cloudapp coffee composer docker git-flow laravel laravel5 vagrant osx)
 
 source $ZSH/oh-my-zsh.sh
 
