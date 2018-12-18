@@ -36,12 +36,6 @@ export MANPAGER='less -X';
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty);
 
-# Help Scout Aliases and bash completion
-export SCOUT_DOCKER_MODE=1
-export HS_PROJECT_DIRECTORY=~/Code/helpscout
-export AWS_PROFILE='hs-docker-user'
-# END Help Scout
-
 export PATH="~/Code/stevenwadejr/tyme2-standup/bin:$PATH"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
@@ -53,3 +47,8 @@ export NVM_DIR="$HOME/.nvm"
 
 
 export DEFAULT_USER=`whoami`
+
+# Begin FUB
+#export AWS_IAM_USER=
+#export AWS_ACCOUNT=
+# End FUB
